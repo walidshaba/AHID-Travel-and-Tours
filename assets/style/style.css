@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: var(--roboto);
+}
+
+:root {
+  --oswald: 'Oswald', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+header {
+}
+header .top-nav {
+  background-color: #000588;
+}
+
+.top-nav .top-contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+.top-contacts a {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  width: 115px;
+  justify-content: space-between;
+}
+a .image {
+  width: 14px;
+}
+a p {
+  font-size: 14px;
+}
+
+/* Small Tablets */
+@media screen and (min-width: 620px) {
+}
+
+/*Large Tablets and Laptops   */
+@media screen and (min-width: 960px) {
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+}
