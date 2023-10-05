@@ -19,6 +19,7 @@ body {
 }
 
 header {
+  /* position: relative; */
 }
 header .top-nav {
   background-color: rgba(0, 23, 156, 0.8);
@@ -51,8 +52,12 @@ header nav {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px 20px;
+  position: sticky;
+  top: 0px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav .logo {
@@ -68,8 +73,8 @@ nav .logo {
   height: 30px;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
-  right: 20px;
+  /* position: absolute;
+  right: 20px; */
   cursor: pointer;
   transition: all 0.35s;
 }
@@ -78,14 +83,29 @@ nav .logo {
   background-image: url('../images/icons/menu_open_FILL0_wght400_GRAD0_opsz24.png');
 }
 
-.menu {
-  padding-left: 40px;
-  margin-top: 20px;
-  height: 100%;
+nav .menu {
+  position: absolute;
+  height: 0;
+  right: 0;
+  top: 100px;
+  transition: all ease-in-out 0.35s;
+  left: 0;
+  background-color: #fff;
+  display: none;
+  padding: 20px 40px;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.menu p {
-  padding: 5px 0;
-  margin-bottom: solid 1px black;
+
+nav .menu.active {
+  height: 100%;
+  display: flex;
+}
+
+.menu p.active {
+  display: inline;
+  border-bottom: 2px solid rgba(0, 23, 156, 0.8);
+  width: fit-content;
 }
 
 .menu p a {
@@ -93,12 +113,34 @@ nav .logo {
   font-weight: 500;
   color: #140a2e;
 }
+.menu ul {
+}
+
+.menu ul li {
+  display: none;
+  list-style: none;
+}
+.menu ul:hover li {
+  display: flex;
+}
 main {
+  height: 2000px;
+}
+main .land-img {
   background-image: url('../images/pexels-abid-bin-nazar-10513876.jpg');
   width: 100%;
   height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.land-img h1,
+.land-img p {
+  color: #fff;
 }
 /* Small Tablets */
 @media screen and (min-width: 620px) {
