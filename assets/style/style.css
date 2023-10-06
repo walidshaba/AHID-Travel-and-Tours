@@ -22,7 +22,7 @@ header {
   /* position: relative; */
 }
 header .top-nav {
-  background-color: rgba(0, 23, 156, 0.8);
+  background-color: #00129f;
 }
 
 .top-nav .top-contacts {
@@ -54,7 +54,7 @@ header nav {
   display: flex;
   flex-direction: row;
   padding: 10px 20px;
-  position: sticky;
+  position: relative;
   top: 0px;
   justify-content: space-between;
   align-items: center;
@@ -85,23 +85,26 @@ nav .logo {
 
 nav .menu {
   position: absolute;
-  height: 0;
-  right: 0;
-  top: 100px;
-  transition: all ease-in-out 0.35s;
+  height: 100px;
+  width: 100%;
+  top: 100%;
   left: 0;
   background-color: #fff;
   display: none;
   padding: 20px 40px;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  transition: all 0.5s;
 }
 
 nav .menu.active {
-  height: 100%;
-  display: flex;
+  height: auto;
+  display: unset;
 }
-
+.menu p {
+  margin-bottom: 20px;
+}
 .menu p.active {
   display: inline;
   border-bottom: 2px solid rgba(0, 23, 156, 0.8);
@@ -114,33 +117,98 @@ nav .menu.active {
   color: #140a2e;
 }
 .menu ul {
+  font-size: 16px;
+  font-weight: 500;
+  color: #140a2e;
 }
 
 .menu ul li {
   display: none;
   list-style: none;
+  margin: 20px 0;
+  margin-left: 20px;
 }
 .menu ul:hover li {
   display: flex;
 }
 main {
-  height: 2000px;
+  height: 200px;
 }
 main .land-img {
-  background-image: url('../images/pexels-abid-bin-nazar-10513876.jpg');
+  background-image: url('../images/Haram2.jpg');
   width: 100%;
-  height: 480px;
+  height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 80px;
 }
 .land-img h1,
 .land-img p {
-  color: #fff;
+  color: ;
+}
+
+main .services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.services h1 {
+  text-transform: uppercase;
+  color: #140a2e;
+  line-height: 34px;
+  margin: 0 0 20px;
+}
+.services p {
+  text-align: center;
+}
+
+.services .services-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.services-container .img-container {
+  position: relative;
+  max-width: 400px;
+  margin: 30px 10px;
+}
+.img-container img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  margin: 0 0 20px;
+}
+.img-container .middle-txt h4 {
+  text-align: center;
+}
+.img-container .middle-txt p {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.01);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.img-container:hover img {
+  opacity: 0.3;
+}
+.img-container:hover .middle-txt p {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 /* Small Tablets */
 @media screen and (min-width: 620px) {
